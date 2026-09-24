@@ -1,0 +1,470 @@
+@import "tailwindcss";
+
+/* 
+  Global Light Mode Overrides 
+  This seamlessly converts the dark glassmorphism theme into a beautiful light glassmorphism 
+  theme without needing to rewrite hundreds of Tailwind classes across the app.
+*/
+
+.light-mode {
+  color: #111827;
+}
+
+/* Force texts to be dark, prominent, and bold for crisp readability */
+.light-mode .text-white:not(button.bg-gradient-to-r, button.bg-gradient-to-r *, button.bg-blue-600, button.bg-blue-600 *, button.bg-blue-700, button.bg-blue-700 *),
+.light-mode .text-gray-100:not(button.bg-gradient-to-r, button.bg-gradient-to-r *, button.bg-blue-600, button.bg-blue-600 *),
+.light-mode .text-gray-200:not(button.bg-gradient-to-r, button.bg-gradient-to-r *, button.bg-blue-600, button.bg-blue-600 *) {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+.light-mode .text-gray-300:not(button.bg-gradient-to-r, button.bg-gradient-to-r *, button.bg-blue-600, button.bg-blue-600 *),
+.light-mode .text-gray-400:not(button.bg-gradient-to-r, button.bg-gradient-to-r *, button.bg-blue-600, button.bg-blue-600 *) {
+  color: #334155 !important;
+  font-weight: 500 !important;
+  text-shadow: none !important;
+}
+
+/* Headings and labels in light mode */
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6 {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+.light-mode p,
+.light-mode span,
+.light-mode label {
+  font-weight: 500;
+}
+
+/* Invert all the dark glassmorphism backgrounds into light frosted glass */
+.light-mode .bg-\[\#1D1B42\],
+.light-mode .bg-\[\#17153B\]\/50,
+.light-mode .bg-\[\#17153B\]\/70,
+.light-mode .bg-\[\#0B0A1A\]\/30,
+.light-mode .bg-\[\#0B0A1A\]\/50,
+.light-mode .bg-\[\#1D1B42\]\/95 {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important;
+}
+
+/* Invert subtle white highlights to subtle dark borders */
+.light-mode .bg-white\/5,
+.light-mode .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode .border-white\/5,
+.light-mode .border-white\/10,
+.light-mode .border-white\/20,
+.light-mode .border-white\/30 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Fix Inputs and Selects for Light Mode */
+.light-mode input,
+.light-mode select {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.light-mode select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.light-mode input::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Fix Icon colors */
+.light-mode svg.text-white,
+.light-mode svg.text-gray-200,
+.light-mode svg.text-gray-300,
+.light-mode svg.text-gray-400 {
+  color: #374151 !important;
+}
+
+/* Light mode Sidebar styling */
+.light-mode aside {
+  background-color: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(20px) !important;
+  border-right-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode aside nav a.text-gray-300 {
+  color: #1e293b !important;
+}
+
+.light-mode aside nav a.text-gray-300:hover {
+  background-color: rgba(99, 102, 241, 0.1) !important;
+  color: #4338ca !important;
+}
+
+.light-mode aside nav a.text-gray-300:hover svg {
+  color: #4338ca !important;
+}
+
+/* Ensure the selected Sidebar link looks great */
+.light-mode .bg-gradient-to-r.from-indigo-500\/80 {
+  background-image: linear-gradient(to right, rgba(99, 102, 241, 0.95), rgba(168, 85, 247, 0.95)) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35) !important;
+}
+.light-mode .bg-gradient-to-r.from-indigo-500\/80 svg,
+.light-mode .bg-gradient-to-r.from-indigo-500\/80 * {
+  color: white !important;
+}
+
+/* Light mode stat card colors */
+.light-mode .light-stat-card-1 {
+  background: linear-gradient(135deg, rgba(238, 242, 255, 0.85), rgba(224, 231, 255, 0.7)) !important;
+  border-color: rgba(99, 102, 241, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12) !important;
+}
+.light-mode .light-stat-card-1 p {
+  color: #4338ca !important;
+  font-weight: 700 !important;
+}
+.light-mode .light-stat-card-1 h3 {
+  color: #1e1b4b !important;
+}
+
+.light-mode .light-stat-card-2 {
+  background: linear-gradient(135deg, rgba(236, 253, 245, 0.85), rgba(209, 250, 229, 0.7)) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12) !important;
+}
+.light-mode .light-stat-card-2 p {
+  color: #047857 !important;
+  font-weight: 700 !important;
+}
+.light-mode .light-stat-card-2 h3 {
+  color: #064e3b !important;
+}
+
+.light-mode .light-stat-card-3 {
+  background: linear-gradient(135deg, rgba(250, 245, 255, 0.85), rgba(243, 232, 255, 0.7)) !important;
+  border-color: rgba(168, 85, 247, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.12) !important;
+}
+.light-mode .light-stat-card-3 p {
+  color: #7e22ce !important;
+  font-weight: 700 !important;
+}
+.light-mode .light-stat-card-3 h3 {
+  color: #3b0764 !important;
+}
+
+/* Light mode Action Button highlights */
+.light-mode .bg-purple-500\/10,
+.light-mode .bg-purple-500\/20 {
+  background-color: rgba(147, 51, 234, 0.14) !important;
+  border-color: rgba(147, 51, 234, 0.35) !important;
+  color: #6b21a8 !important;
+}
+.light-mode .bg-purple-500\/10 *,
+.light-mode .bg-purple-500\/20 * {
+  color: #6b21a8 !important;
+}
+
+.light-mode .bg-amber-500\/10,
+.light-mode .bg-amber-500\/20 {
+  background-color: rgba(217, 119, 6, 0.14) !important;
+  border-color: rgba(217, 119, 6, 0.35) !important;
+  color: #92400e !important;
+}
+.light-mode .bg-amber-500\/10 *,
+.light-mode .bg-amber-500\/20 * {
+  color: #92400e !important;
+}
+
+.light-mode .bg-blue-500\/15 {
+  background-color: rgba(37, 99, 235, 0.14) !important;
+  border-color: rgba(37, 99, 235, 0.35) !important;
+  color: #1d4ed8 !important;
+}
+.light-mode .bg-blue-500\/15 * {
+  color: #1d4ed8 !important;
+}
+
+/* Light mode Document Viewer Modal overrides */
+.light-mode .bg-\[\#141233\]\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2) !important;
+}
+
+.light-mode .bg-\[\#0d0c24\]\/90 {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+}
+
+/* Light mode Chat Page cards */
+.light-mode .bg-\[\#14102e\]\/70,
+.light-mode .bg-\[\#141130\]\/80 {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(147, 51, 234, 0.2) !important;
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.1) !important;
+}
+
+.light-mode .bg-\[\#19153a\] {
+  background-color: rgba(241, 245, 249, 0.95) !important;
+  border-color: rgba(147, 51, 234, 0.25) !important;
+}
+
+.light-mode .bg-\[\#19153a\] select {
+  color: #0f172a !important;
+}
+
+.light-mode .bg-\[\#1e1942\]\/90 {
+  background-color: #ffffff !important;
+  border-color: rgba(147, 51, 234, 0.25) !important;
+  color: #1e1b4b !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode .bg-\[\#1e1942\]\/90 p {
+  color: #1e1b4b !important;
+  font-weight: 500 !important;
+}
+
+
+/* Custom sleek glass scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.light-mode ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Ambient animated background orbs */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -45px) scale(1.08);
+  }
+  66% {
+    transform: translate(-25px, 20px) scale(0.95);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-35px, 35px) scale(1.1);
+  }
+  66% {
+    transform: translate(30px, -25px) scale(0.92);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 18s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 22s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 12s ease-in-out infinite;
+}
+
+/* 3D Anime Hologram & Voice Visualizer Styles */
+@keyframes holo-glow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4), inset 0 0 15px rgba(59, 130, 246, 0.3);
+    border-color: rgba(168, 85, 247, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(236, 72, 153, 0.6), inset 0 0 25px rgba(147, 51, 234, 0.5);
+    border-color: rgba(236, 72, 153, 0.8);
+  }
+}
+
+@keyframes anime-breathe {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.8deg) scale(1.02);
+  }
+}
+
+@keyframes voice-wave {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 28px;
+  }
+}
+
+@keyframes radar-ripple {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.anime-card-3d {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.anime-hologram-glow {
+  animation: holo-glow 4s ease-in-out infinite;
+}
+
+.anime-avatar-floating {
+  animation: anime-breathe 4s ease-in-out infinite;
+}
+
+/* Realistic 3D Digital Human Reactive Natural Animations */
+@keyframes character-idle {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 25px rgba(168, 85, 247, 0.4));
+  }
+  50% {
+    transform: translateY(-5px) scale(1.004);
+    filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 35px rgba(168, 85, 247, 0.55));
+  }
+}
+
+@keyframes character-listening {
+  0%, 100% {
+    transform: translateY(-2px) rotate(0.6deg) scale(1.01);
+    filter: drop-shadow(0 25px 40px rgba(239, 68, 68, 0.5)) drop-shadow(0 0 30px rgba(239, 68, 68, 0.6));
+  }
+  50% {
+    transform: translateY(-6px) rotate(-0.5deg) scale(1.015);
+    filter: drop-shadow(0 30px 45px rgba(239, 68, 68, 0.6)) drop-shadow(0 0 40px rgba(239, 68, 68, 0.75));
+  }
+}
+
+@keyframes character-speaking {
+  0%, 100% {
+    transform: translateY(0px) scale(1.005);
+    filter: drop-shadow(0 25px 40px rgba(236, 72, 153, 0.5)) drop-shadow(0 0 30px rgba(236, 72, 153, 0.6));
+  }
+  30% {
+    transform: translateY(-7px) rotate(0.4deg) scale(1.012);
+    filter: drop-shadow(0 30px 45px rgba(236, 72, 153, 0.65)) drop-shadow(0 0 45px rgba(236, 72, 153, 0.75));
+  }
+  70% {
+    transform: translateY(-3px) rotate(-0.3deg) scale(1.008);
+    filter: drop-shadow(0 28px 42px rgba(236, 72, 153, 0.55)) drop-shadow(0 0 35px rgba(236, 72, 153, 0.65));
+  }
+}
+
+@keyframes character-thinking {
+  0%, 100% {
+    transform: translateY(-2px) rotate(-0.8deg) scale(1.005);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0.6deg) scale(1.01);
+  }
+}
+
+.standing-character-idle {
+  animation: character-idle 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.standing-character-listening {
+  animation: character-listening 1.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.standing-character-speaking {
+  animation: character-speaking 1.2s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.standing-character-thinking {
+  animation: character-thinking 2.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* 360 Degree Character Hologram Stage Rings */
+@keyframes ring-spin-360 {
+  0% {
+    transform: rotateX(75deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(75deg) rotateZ(360deg);
+  }
+}
+
+@keyframes ring-spin-reverse {
+  0% {
+    transform: rotateX(75deg) rotateZ(360deg);
+  }
+  100% {
+    transform: rotateX(75deg) rotateZ(0deg);
+  }
+}
+
+.stage-ring-360 {
+  animation: ring-spin-360 14s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.stage-ring-reverse-360 {
+  animation: ring-spin-reverse 18s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.radar-ring {
+  animation: radar-ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
